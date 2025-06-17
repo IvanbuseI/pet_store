@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8">
+  <title>Оплата</title>
+  <link rel="stylesheet" href="static/styles/style.css">
+</head>
+<body>
+  <header>
+    <h1>Оплата</h1>
+  </header>
+  <nav>
+    <ul>
+      <li><a href="index.html">Головна</a></li>
+      <li><a href="dogs.html">Собаки</a></li>
+      <li><a href="cats.html">Коти</a></li>
+      <li><a href="birds.html">Птахи</a></li>
+      <li><a href="cart.html">Кошик</a></li>
+      <li><a href="profile.html" id="profileLink" style="display:none;">Особистий кабінет</a></li>
+      <li><a href="login.html" id="loginLink">Вхід</a></li>
+      <li><a href="register.html" id="registerLink">Реєстрація</a></li>
+    </ul>
+  </nav>
+  <main>
+    <div class="payment-container">
+      <h2>Оберіть спосіб оплати</h2>
+      <div class="payment-options">
+        <div class="payment-option">
+          <input type="radio" name="payment" id="card" checked />
+          <label for="card">
+            <img src="https://w7.pngwing.com/pngs/51/46/png-transparent-card-illustration-bank-card-credit-card-atm-card-debit-card-credit-card-icon-angle-rectangle-payment-thumbnail.png" alt="Картка" />
+            <div>Оплата банківською карткою</div>
+          </label>
+        </div>
+  
+        <div class="payment-option">
+          <input type="radio" name="payment" id="bank" />
+          <label for="bank">
+            <img src="https://icon-library.com/images/money-transfer-icon/money-transfer-icon-16.jpg" alt="Банк" />
+            <div>Банківський переказ</div>
+          </label>
+        </div>
+  
+        <div class="payment-option">
+          <input type="radio" name="payment" id="cash" />
+          <label for="cash">
+            <img src="https://www.nicepng.com/png/detail/82-823091_png-file-money-cash-icon-png.png" alt="Готівка" />
+            <div>Готівка</div>
+          </label>
+        </div>
+  
+        <div class="payment-option">
+          <input type="radio" name="payment" id="paypal" />
+          <label for="paypal">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/39/PayPal_logo.svg/1280px-PayPal_logo.svg.png" alt="PayPal" />
+            <div>PayPal</div>
+          </label>
+        </div>
+      </div>
+  
+      <button class="pay-button" id="payButton">Сплатити ... грн</button>
+    </div>
+  
+    <script>
+      function calculateTotal() {
+        let cart = JSON.parse(localStorage.getItem("cart")) || [];
+        let total = 0;
+        cart.forEach(item => {
+          const quantity = item.quantity || 1;
+          const price = parseFloat(item.price) || 0;
+          total += quantity * price;
+        });
+        return total.toFixed(2);
+      }
+  
+      document.addEventListener("DOMContentLoaded", function () {
+        const payButton = document.getElementById("payButton");
+        const total = calculateTotal();
+        payButton.textContent = `Сплатити ${total} грн`;
+  
+        // Додаткове виділення вибраної оплати
+        const options = document.querySelectorAll('.payment-option');
+  
+        options.forEach(option => {
+          option.addEventListener('click', () => {
+            options.forEach(o => o.classList.remove('selected'));
+            option.classList.add('selected');
+            option.querySelector('input').checked = true;
+          });
+        });
+      });
+      const loggedUser = JSON.parse(localStorage.getItem('loggedInUser'));
+  const profileLink = document.getElementById('profileLink');
+  const loginLink = document.getElementById('loginLink');
+  const registerLink = document.getElementById('registerLink');
+
+  if (loggedUser) {
+    if (profileLink) profileLink.style.display = 'inline';
+    if (loginLink) loginLink.style.display = 'none';
+    if (registerLink) registerLink.style.display = 'none';
+  }
+</script>
+  </body>
+  <footer>
+    <div class="container">
+      <p>&copy; 2025 PetStore. Усі права захищені.</p>
+    </div>
+  </footer>
+  </html>
+  

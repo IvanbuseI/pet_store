@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Коти</title>
+    <link rel="stylesheet" href="static/styles/style.css">
+</head>
+<body>
+    <header>
+        <h1>PetStore - Коти</h1>
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="index.html">Головна</a></li>
+            <li><a href="dogs.html">Собаки</a></li>
+            <li><a href="cats.html">Коти</a></li>
+            <li><a href="birds.html">Птахи</a></li>
+            <li><a href="cart.html">Кошик</a></li>
+            <li><a href="profile.html" id="profileLink" style="display:none;">Особистий кабінет</a></li>
+            <li><a href="login.html" id="loginLink">Вхід</a></li>
+            <li><a href="register.html" id="registerLink">Реєстрація</a></li>
+        </ul>
+    </nav>
+
+    <main class="container">
+        <section class="filters">
+            <h2>Товари для котів</h2>
+        </section>
+
+        <section class="products">
+
+            <div class="product-card cats">
+              <img src="https://content.e-zoo.com.ua/files/Prods/prod_19285_04919343.jpg" alt="Whiskas">
+              <h3>Корм для котів "Whiskas" (1 кг)</h3>
+              <p>Ціна: 150 грн</p>
+              <button class="add-to-cart" data-name="Whiskas" data-price="150" data-img="https://content.e-zoo.com.ua/files/Prods/prod_19285_04919343.jpg">Додати до кошика</button>
+            </div>
+            
+            <div class="product-card cats">
+              <img src="https://hotline.ua/img/tx/283/2831587365.jpg" alt="Royal Canin">
+              <h3>Корм для котів "Royal Canin" (2 кг)</h3>
+              <p>Ціна: 350 грн</p>
+              <button class="add-to-cart" data-name="Royal Canin" data-price="350" data-img="https://hotline.ua/img/tx/283/2831587365.jpg">Додати до кошика</button>
+            </div>
+            
+            <div class="product-card cats">
+              <img src="https://img.joomcdn.net/85346502ff9c5b6a997233a6af4545442f73cf98_1024_1024.jpeg" alt="Лежак">
+              <h3>Лежак для котів "Супер Комфорт"</h3>
+              <p>Ціна: 200 грн</p>
+              <button class="add-to-cart" data-name="Лежак" data-price="200" data-img="https://img.joomcdn.net/85346502ff9c5b6a997233a6af4545442f73cf98_1024_1024.jpeg">Додати до кошика</button>
+            </div>
+            
+            <div class="product-card cats">
+              <img src="https://bronzedog.ua/image/cache/catalog/products/igrushky/barksi/3507/3507_Musha_z_kanatom-400x400.jpg" alt="Мишка">
+              <h3>Котяча іграшка "Мишка" з мотузкою</h3>
+              <p>Ціна: 50 грн</p>
+              <button class="add-to-cart" data-name="Мишка" data-price="50" data-img="https://bronzedog.ua/image/cache/catalog/products/igrushky/barksi/3507/3507_Musha_z_kanatom-400x400.jpg">Додати до кошика</button>
+            </div>
+            
+            <div class="product-card cats">
+              <img src="https://vetzoo.com.ua/image-cache/?fi=32825&wt=0&f=static-files%2Fimg%2Fgoods%2Fa3%2Ff0%2Fever-clean-napovnyuvach-dlya-kotyachogo-tualetu-z-aromatom-lavanda-10-l-9509979.jpg" alt="Ever Clean">
+              <h3>Наповнювач для котячого туалету "Ever Clean" (5 кг)</h3>
+              <p>Ціна: 250 грн</p>
+              <button class="add-to-cart" data-name="Ever Clean" data-price="250" data-img="https://vetzoo.com.ua/image-cache/?fi=32825&wt=0&f=static-files%2Fimg%2Fgoods%2Fa3%2Ff0%2Fever-clean-napovnyuvach-dlya-kotyachogo-tualetu-z-aromatom-lavanda-10-l-9509979.jpg">Додати до кошика</button>
+            </div>
+            
+            <div class="product-card cats">
+              <img src="https://m.media-amazon.com/images/I/71iPQ5GfFuS.jpg" alt="Pet Groomer">
+              <h3>Грумінг для котів "Pet Groomer"</h3>
+              <p>Ціна: 180 грн</p>
+              <button class="add-to-cart" data-name="Pet Groomer" data-price="180" data-img="https://m.media-amazon.com/images/I/71iPQ5GfFuS.jpg">Додати до кошика</button>
+            </div>
+            
+            <div class="product-card cats">
+              <img src="https://main-cdn.sbermegamarket.ru/big2/hlr-system/-20/614/844/331/014/162/8/600009224310b0.jpeg" alt="Hill's">
+              <h3>Сухий корм для кошенят "Hill's Science Plan" (1,5 кг)</h3>
+              <p>Ціна: 400 грн</p>
+              <button class="add-to-cart" data-name="Hill's Science Plan" data-price="400" data-img="https://main-cdn.sbermegamarket.ru/big2/hlr-system/-20/614/844/331/014/162/8/600009224310b0.jpeg">Додати до кошика</button>
+            </div>
+            
+            <div class="product-card cats">
+              <img src="https://zoodom.ua/media/cache/sylius_shop_product_max_thumbnail/old/v/e/vets_best_flea_tick_waterless_bath_foam_-_147_.jpg" alt="Vet's Best">
+              <h3>Шампунь для котів "Vet's Best"</h3>
+              <p>Ціна: 120 грн</p>
+              <button class="add-to-cart" data-name="Vet's Best" data-price="120" data-img="https://zoodom.ua/media/cache/sylius_shop_product_max_thumbnail/old/v/e/vets_best_flea_tick_waterless_bath_foam_-_147_.jpg">Додати до кошика</button>
+            </div>
+            
+            <div class="product-card cats">
+              <img src="https://zoomagazin-dostavka.ru/imgtmp/orign_100_w/data/Ekochimtech/VetriScience_Senior_Multivitamin_Cats.jpg" alt="VetriScience">
+              <h3>Вітаміни для котів "VetriScience"</h3>
+              <p>Ціна: 250 грн</p>
+              <button class="add-to-cart" data-name="VetriScience" data-price="250" data-img="https://zoomagazin-dostavka.ru/imgtmp/orign_100_w/data/Ekochimtech/VetriScience_Senior_Multivitamin_Cats.jpg">Додати до кошика</button>
+            </div>
+            
+            <div class="product-card cats">
+              <img src="https://i.ebayimg.com/images/g/n8AAAOSw2eNnToUG/s-l1200.png" alt="Cat Tree">
+              <h3>Місто для кота "Cat Tree" з кількома поверхами</h3>
+              <p>Ціна: 800 грн</p>
+              <button class="add-to-cart" data-name="Cat Tree" data-price="800" data-img="https://i.ebayimg.com/images/g/n8AAAOSw2eNnToUG/s-l1200.png">Додати до кошика</button>
+            </div>
+            
+            
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 PetStore. Усі права захищені.</p>
+        </div>
+    </footer>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        const cart = JSON.parse(localStorage.getItem("cart")) || [];
+    
+        document.querySelectorAll(".add-to-cart").forEach(function (button) {
+          button.addEventListener("click", function () {
+            const name = this.getAttribute("data-name");
+            const price = parseFloat(this.getAttribute("data-price"));
+            const img = this.getAttribute("data-img");
+    
+            if (!name || isNaN(price) || !img) {
+              alert("Помилка додавання товару. Дані некоректні.");
+              return;
+            }
+    
+            const existingItem = cart.find((item) => item.name === name);
+            if (existingItem) {
+              existingItem.quantity += 1;
+            } else {
+              cart.push({ name, price, img, quantity: 1 });
+            }
+    
+            localStorage.setItem("cart", JSON.stringify(cart));
+            alert(`${name} додано до кошика!`);
+          });
+        });
+      });
+      const loggedUser = JSON.parse(localStorage.getItem('loggedInUser'));
+  const profileLink = document.getElementById('profileLink');
+  const loginLink = document.getElementById('loginLink');
+  const registerLink = document.getElementById('registerLink');
+
+  if (loggedUser) {
+    if (profileLink) profileLink.style.display = 'inline';
+    if (loginLink) loginLink.style.display = 'none';
+    if (registerLink) registerLink.style.display = 'none';
+  }
+</script>
+    
+</body>
+</html>

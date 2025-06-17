@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Кошик</title>
+  <link rel="stylesheet" href="static/styles/style.css" />
+</head>
+<body>
+  <header>
+    <h1>PetStore</h1>
+  </header>
+
+  <nav>
+    <ul>
+      <li><a href="index.html">Головна</a></li>
+      <li><a href="dogs.html">Собаки</a></li>
+      <li><a href="cats.html">Коти</a></li>
+      <li><a href="birds.html">Птахи</a></li>
+      <li><a href="cart.html">Кошик</a></li>
+      <li><a href="profile.html" id="profileLink" style="display:none;">Особистий кабінет</a></li>
+      <li><a href="login.html" id="loginLink">Вхід</a></li>
+      <li><a href="register.html" id="registerLink">Реєстрація</a></li>
+    </ul>
+  </nav>
+
+  <main class="container">
+    <h2>Ваш кошик</h2>
+    <div id="cart-items"></div>
+    <h3>Загальна сума: <span id="total">0 грн</span></h3>
+    <a href="payment.html" class="pay-button">Перейти до оплати</a>
+  </main>
+
+  <footer>
+    <div class="container">
+      <p>&copy; 2025 PetStore. Усі права захищені.</p>
+    </div>
+  </footer>
+
+  <script>
+    function renderCart() {
+      const cart = JSON.parse(localStorage.getItem("cart")) || [];
+      const cartContainer = document.getElementById("cart-items");
+      const totalDisplay = document.getElementById("total");
+      cartContainer.innerHTML = "";
+
+      let total = 0;
+
+      cart.forEach((item, index) => {
+        const itemTotal = item.price * item.quantity;
+        total += itemTotal;
+
+        const itemDiv = document.createElement("div");
+        itemDiv.classList.add("cart-item");
+        itemDiv.innerHTML = `
+          <img src="${item.img}" alt="${item.name}" />
+          <div>
+            <h4>${item.name}</h4>
+            <p>Ціна: ${item.price} грн</p>
+            <label>Кількість: 
+              <input type="number" min="1" value="${item.quantity}" data-index="${index}" class="quantity-input">
+            </label>
+            <button class="remove-item" data-index="${index}">Видалити</button>
+          </div>
+        `;
+        cartContainer.appendChild(itemDiv);
+      });
+
+      totalDisplay.textContent = total + " грн";
+    }
+
+    document.addEventListener("DOMContentLoaded", () => {
+      renderCart();
+
+      document.getElementById("cart-items").addEventListener("input", function (e) {
+        if (e.target.classList.contains("quantity-input")) {
+          const index = e.target.dataset.index;
+          let cart = JSON.parse(localStorage.getItem("cart")) || [];
+          let newQuantity = parseInt(e.target.value);
+          if (newQuantity > 0) {
+            cart[index].quantity = newQuantity;
+            localStorage.setItem("cart", JSON.stringify(cart));
+            renderCart();
+          }
+        }
+      });
+
+      document.getElementById("cart-items").addEventListener("click", function (e) {
+        if (e.target.classList.contains("remove-item")) {
+          const index = e.target.dataset.index;
+          let cart = JSON.parse(localStorage.getItem("cart")) || [];
+          cart.splice(index, 1);
+          localStorage.setItem("cart", JSON.stringify(cart));
+          renderCart();
+        }
+      });
+    });
+    const loggedUser = JSON.parse(localStorage.getItem('loggedInUser'));
+  const profileLink = document.getElementById('profileLink');
+  const loginLink = document.getElementById('loginLink');
+  const registerLink = document.getElementById('registerLink');
+
+  if (loggedUser) {
+    if (profileLink) profileLink.style.display = 'inline';
+    if (loginLink) loginLink.style.display = 'none';
+    if (registerLink) registerLink.style.display = 'none';
+  }
+</script>
+</body>
+</html>

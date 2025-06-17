@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Птахи - PetStore</title>
+  <link rel="stylesheet" href="static/styles/style.css"/>
+</head>
+<body>
+  <header><h1>PetStore</h1></header>
+
+  <nav>
+    <ul>
+      <li><a href="index.html">Головна</a></li>
+      <li><a href="dogs.html">Собаки</a></li>
+      <li><a href="cats.html">Коти</a></li>
+      <li><a href="birds.html" class="active">Птахи</a></li>
+      <li><a href="cart.html">Кошик</a></li>
+      <li><a href="profile.html" id="profileLink" style="display:none;">Особистий кабінет</a></li>
+      <li><a href="login.html" id="loginLink">Вхід</a></li>
+      <li><a href="register.html" id="registerLink">Реєстрація</a></li>
+    </ul>
+  </nav>
+
+  <main class="container">
+    <section class="filters">
+      <h2>Товари для птахів</h2>
+  </section>
+    <section class="products">
+
+      <div class="product-card birds">
+        <img src="https://blue-crocodile.com.ua/6608-large_default/versele-laga-prestige-budgies.jpg" alt="Prestige">
+        <h3>Корм для папуг "Prestige" (1 кг)</h3>
+        <p>Ціна: 100 грн</p>
+        <button class="add-to-cart" data-name="Prestige" data-price="100" data-img="https://blue-crocodile.com.ua/6608-large_default/versele-laga-prestige-budgies.jpg">Додати до кошика</button>
+      </div>
+      
+      <div class="product-card birds">
+        <img src="https://cdn.27.ua/sc--media--prod/default/b4/ee/06/b4ee0650-81f1-4526-a69d-134e37b41dbe.jpg" alt="Birdcage">
+        <h3>Клітка для птахів "Birdcage" з підставкою</h3>
+        <p>Ціна: 500 грн</p>
+        <button class="add-to-cart" data-name="Birdcage" data-price="500" data-img="https://cdn.27.ua/sc--media--prod/default/b4/ee/06/b4ee0650-81f1-4526-a69d-134e37b41dbe.jpg">Додати до кошика</button>
+      </div>
+      
+      <div class="product-card birds">
+        <img src="https://ae01.alicdn.com/kf/Se678f231fe8e4caa83152af54f565fe9v.jpg" alt="Perch">
+        <h3>Гамак для птахів "Perch"</h3>
+        <p>Ціна: 80 грн</p>
+        <button class="add-to-cart" data-name="Perch" data-price="80" data-img="https://ae01.alicdn.com/kf/Se678f231fe8e4caa83152af54f565fe9v.jpg">Додати до кошика</button>
+      </div>
+      
+      <div class="product-card birds">
+        <img src="https://zoodom.ua/media/cache/sylius_shop_product_max_thumbnail/30/8e/e21429403c78a47f29cdcda70ddb.jpeg" alt="Bell">
+        <h3>Іграшка для птахів "Bell" з дзвіночком</h3>
+        <p>Ціна: 40 грн</p>
+        <button class="add-to-cart" data-name="Bell" data-price="40" data-img="https://zoodom.ua/media/cache/sylius_shop_product_max_thumbnail/30/8e/e21429403c78a47f29cdcda70ddb.jpeg">Додати до кошика</button>
+      </div>
+      
+      <div class="product-card birds">
+        <img src="https://www.zooapteka.kiev.ua/image/cache/data/product/birds/versele-laga/vitamini/oropharma-omni-vit-liquid-vitamini-dlya-ptic-800x800.jpg" alt="Oropharma">
+        <h3>Вітаміни для птахів "Oropharma"</h3>
+        <p>Ціна: 150 грн</p>
+        <button class="add-to-cart" data-name="Oropharma" data-price="150" data-img="https://www.zooapteka.kiev.ua/image/cache/data/product/birds/versele-laga/vitamini/oropharma-omni-vit-liquid-vitamini-dlya-ptic-800x800.jpg">Додати до кошика</button>
+      </div>
+      
+      <div class="product-card birds">
+        <img src="https://cdn.27.ua/sc--media--prod/default/87/89/e4/8789e45c-967e-4ad8-a2e6-40febcb32dd6.jpg" alt="Lafeber">
+        <h3>Палички для птахів "Lafeber" (3 шт.)</h3>
+        <p>Ціна: 200 грн</p>
+        <button class="add-to-cart" data-name="Lafeber" data-price="200" data-img="https://cdn.27.ua/sc--media--prod/default/87/89/e4/8789e45c-967e-4ad8-a2e6-40febcb32dd6.jpg">Додати до кошика</button>
+      </div>
+      
+      <div class="product-card birds">
+        <img src="https://imgaz1.staticbg.com/thumb/large//oaupload/ser1/banggood/images/31/9A/594583c0-6e83-43f5-bd50-40800aa38be0.jpg.webp" alt="Travel Cage">
+        <h3>Сумка для перевезення птахів "Travel Cage"</h3>
+        <p>Ціна: 250 грн</p>
+        <button class="add-to-cart" data-name="Travel Cage" data-price="250" data-img="https://imgaz1.staticbg.com/thumb/large//oaupload/ser1/banggood/images/31/9A/594583c0-6e83-43f5-bd50-40800aa38be0.jpg.webp">Додати до кошика</button>
+      </div>
+      
+      <div class="product-card birds">
+        <img src="https://img.joomcdn.net/d4aaa59af15d7470e317d917d74649e47e7424ce_original.jpeg" alt="Nest Box">
+        <h3>Лежак для птахів "Nest Box"</h3>
+        <p>Ціна: 150 грн</p>
+        <button class="add-to-cart" data-name="Nest Box" data-price="150" data-img="https://img.joomcdn.net/d4aaa59af15d7470e317d917d74649e47e7424ce_original.jpeg">Додати до кошика</button>
+      </div>
+      
+      <div class="product-card birds">
+        <img src="https://zoovetjungle.com.ua/image/cache/751d0553090d6e26213e3df7b941bbc2.jpg" alt="BirdMed">
+        <h3>Птахолікарський засіб "BirdMed"</h3>
+        <p>Ціна: 120 грн</p>
+        <button class="add-to-cart" data-name="BirdMed" data-price="120" data-img="https://zoovetjungle.com.ua/image/cache/751d0553090d6e26213e3df7b941bbc2.jpg">Додати до кошика</button>
+      </div>
+      
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">
+      <p>&copy; 2025 PetStore. Усі права захищені.</p>
+    </div>
+  </footer>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      const cart = JSON.parse(localStorage.getItem("cart")) || [];
+  
+      document.querySelectorAll(".add-to-cart").forEach(function (button) {
+        button.addEventListener("click", function () {
+          const name = this.getAttribute("data-name");
+          const price = parseFloat(this.getAttribute("data-price"));
+          const img = this.getAttribute("data-img");
+  
+          if (!name || isNaN(price) || !img) {
+            alert("Помилка додавання товару. Дані некоректні.");
+            return;
+          }
+  
+          const existingItem = cart.find((item) => item.name === name);
+          if (existingItem) {
+            existingItem.quantity += 1;
+          } else {
+            cart.push({ name, price, img, quantity: 1 });
+          }
+  
+          localStorage.setItem("cart", JSON.stringify(cart));
+          alert(`${name} додано до кошика!`);
+        });
+      });
+    });
+    const loggedUser = JSON.parse(localStorage.getItem('loggedInUser'));
+  const profileLink = document.getElementById('profileLink');
+  const loginLink = document.getElementById('loginLink');
+  const registerLink = document.getElementById('registerLink');
+
+  if (loggedUser) {
+    if (profileLink) profileLink.style.display = 'inline';
+    if (loginLink) loginLink.style.display = 'none';
+    if (registerLink) registerLink.style.display = 'none';
+  }
+</script>
+  
+</body>
+</html>

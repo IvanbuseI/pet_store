@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>PetStore – Особистий кабінет</title>
+  <link rel="stylesheet" href="static/styles/style.css" />
+</head>
+<body>
+  <header>
+    <h1>PetStore</h1>
+  </header>
+
+  <nav>
+    <ul>
+      <li><a href="index.html">Головна</a></li>
+      <li><a href="dogs.html">Собаки</a></li>
+      <li><a href="cats.html">Коти</a></li>
+      <li><a href="birds.html">Птахи</a></li>
+      <li><a href="cart.html">Кошик</a></li>
+      <li><a href="profile.html" id="profileLink" style="display:none;">Особистий кабінет</a></li>
+      <li><a href="login.html" id="loginLink">Вхід</a></li>
+      <li><a href="register.html" id="registerLink">Реєстрація</a></li>
+    </ul>
+  </nav>
+
+  <main>
+    <div class="profile-container">
+      <h2>Особистий кабінет</h2>
+      <div class="profile-details">
+        <div><strong>Ім’я:</strong> <span id="profile-name">Завантаження...</span></div>
+        <div><strong>Електронна пошта:</strong> <span id="profile-email">Завантаження...</span></div>
+      </div>
+      <div class="profile-actions">
+        <button onclick="logout()">Вийти</button>
+      </div>
+    </div>
+  </main>
+
+  <footer>
+    <div class="container">
+      <p>&copy; 2025 PetStore. Усі права захищені.</p>
+    </div>
+  </footer>
+
+  <script>
+    // Перевірка, чи користувач увійшов
+    const currentUser = JSON.parse(localStorage.getItem('currentUser'));
+
+    if (currentUser && currentUser.name && currentUser.email) {
+      document.getElementById('profile-name').textContent = currentUser.name;
+      document.getElementById('profile-email').textContent = currentUser.email;
+    } else {
+      alert('Будь ласка, увійдіть у свій обліковий запис.');
+      window.location.href = 'login.html';
+    }
+
+    function logout() {
+      localStorage.removeItem('currentUser');
+      window.location.href = 'login.html';
+    }
+    const loggedUser = JSON.parse(localStorage.getItem('loggedInUser'));
+  const profileLink = document.getElementById('profileLink');
+  const loginLink = document.getElementById('loginLink');
+  const registerLink = document.getElementById('registerLink');
+
+  if (loggedUser) {
+    if (profileLink) profileLink.style.display = 'inline';
+    if (loginLink) loginLink.style.display = 'none';
+    if (registerLink) registerLink.style.display = 'none';
+  }
+</script>
+</body>
+</html>

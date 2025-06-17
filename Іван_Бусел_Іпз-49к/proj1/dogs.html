@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Собаки</title>
+    <link rel="stylesheet" href="static/styles/style.css">
+</head>
+<body>
+    <header>
+        <h1>PetStore - Собаки</h1>
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="index.html">Головна</a></li>
+            <li><a href="dogs.html">Собаки</a></li>
+            <li><a href="cats.html">Коти</a></li>
+            <li><a href="birds.html">Птахи</a></li>
+            <li><a href="cart.html">Кошик</a></li>
+            <li><a href="profile.html" id="profileLink" style="display:none;">Особистий кабінет</a></li>
+            <li><a href="login.html" id="loginLink">Вхід</a></li>
+            <li><a href="register.html" id="registerLink">Реєстрація</a></li>
+        </ul>
+    </nav>
+
+    <main class="container">
+        <section class="filters">
+            <h2>Товари для собак</h2>
+        </section>
+
+        <section class="products">
+
+            <div class="product-card dogs">
+              <img src="https://catalog.detmir.st/media/brZf_Kgbjin1aSA-Pf8dnafxKtNHxPzzE4mN6DEQ8dA=" alt="Сухий корм Pedigree" />
+              <h3>Сухий корм Pedigree</h3>
+              <p>Ціна: 349 грн</p>
+              <button class="add-to-cart" data-name="Сухий корм Pedigree" data-price="349" data-img="https://catalog.detmir.st/media/brZf_Kgbjin1aSA-Pf8dnafxKtNHxPzzE4mN6DEQ8dA=">До кошика</button>
+            </div>
+            <div class="product-card dogs">
+              <img src="https://zoodom.ua/media/cache/sylius_shop_product_max_thumbnail/f7/10/b92faec0f8f834fecf63f9f17368.jpeg" alt="Вологий корм Royal Canin" />
+              <h3>Вологий корм Royal Canin</h3>
+              <p>Ціна: 119 грн</p>
+              <button class="add-to-cart" data-name="Вологий корм Royal Canin" data-price="119" data-img="https://zoodom.ua/media/cache/sylius_shop_product_max_thumbnail/f7/10/b92faec0f8f834fecf63f9f17368.jpeg">До кошика</button>
+            </div>
+            <div class="product-card dogs">
+              <img src="https://dm-opt.com.ua/images/toy0010069_.png" alt="Іграшка м'яч" />
+              <h3>Іграшка м'яч</h3>
+              <p>Ціна: 89 грн</p>
+              <button class="add-to-cart" data-name="Іграшка м'яч" data-price="89" data-img="https://dm-opt.com.ua/images/toy0010069_.png">До кошика</button>
+            </div>
+            <div class="product-card dogs">
+              <img src="https://vetzoo.com.ua/image-cache/?fi=32825&wt=0&f=static-files%2Fimg%2Fgoods%2F7d%2F92%2Fpovidets-ruletka-flexi-black-design-m-strichka-5m25-kg-sribniy-9520668.jpg" alt="Повідець 5м" />
+              <h3>Повідець 5м</h3>
+              <p>Ціна: 149 грн</p>
+              <button class="add-to-cart" data-name="Повідець 5м" data-price="149" data-img="https://vetzoo.com.ua/image-cache/?fi=32825&wt=0&f=static-files%2Fimg%2Fgoods%2F7d%2F92%2Fpovidets-ruletka-flexi-black-design-m-strichka-5m25-kg-sribniy-9520668.jpg">До кошика</button>
+            </div>
+            <div class="product-card dogs">
+              <img src="https://petslike.ua/images/product/small/6c594947ba46c6fd4504eec489030d0e.jpeg" alt="Лежак для собак" />
+              <h3>Лежак для собак</h3>
+              <p>Ціна: 399 грн</p>
+              <button class="add-to-cart" data-name="Лежак для собак" data-price="399" data-img="https://petslike.ua/images/product/small/6c594947ba46c6fd4504eec489030d0e.jpeg">До кошика</button>
+            </div>
+            <div class="product-card dogs">
+              <img src="https://zoo-club.com.ua/image/catalog/natafoto/Collar/Osheiniki/Collar%20Kogan%20besrosmerni%20black.jpg" alt="Нашийник шкіряний" />
+              <h3>Нашийник шкіряний</h3>
+              <p>Ціна: 99 грн</p>
+              <button class="add-to-cart" data-name="Нашийник шкіряний" data-price="99" data-img="https://zoo-club.com.ua/image/catalog/natafoto/Collar/Osheiniki/Collar%20Kogan%20besrosmerni%20black.jpg">До кошика</button>
+            </div>
+            <div class="product-card dogs">
+              <img src="https://groomer.com.ua/image/cache/webp/data/products/gr_23602-01-1000x1000.webp" alt="Шампунь для собак" />
+              <h3>Шампунь для собак</h3>
+              <p>Ціна: 89 грн</p>
+              <button class="add-to-cart" data-name="Шампунь для собак" data-price="89" data-img="https://groomer.com.ua/image/cache/webp/data/products/gr_23602-01-1000x1000.webp">До кошика</button>
+            </div>
+            <div class="product-card dogs">
+              <img src="https://zoomagazin.dp.ua/image/cache/catalog/db_16_57418_1_800_1_528-1200x800.jpg" alt="Жувальні ласощі" />
+              <h3>Жувальні ласощі</h3>
+              <p>Ціна: 59 грн</p>
+              <button class="add-to-cart" data-name="Жувальні ласощі" data-price="59" data-img="https://zoomagazin.dp.ua/image/cache/catalog/db_16_57418_1_800_1_528-1200x800.jpg">До кошика</button>
+            </div>
+            <div class="product-card dogs">
+              <img src="https://main-cdn.sbermegamarket.ru/big2/hlr-system/-15/396/536/573/317/31/100030687222b0.jpg" alt="Миска металева" />
+              <h3>Миска металева</h3>
+              <p>Ціна: 79 грн</p>
+              <button class="add-to-cart" data-name="Миска металева" data-price="79" data-img="https://main-cdn.sbermegamarket.ru/big2/hlr-system/-15/396/536/573/317/31/100030687222b0.jpg">До кошика</button>
+            </div>
+            <div class="product-card dogs">
+              <img src="https://ireland.apollo.olxcdn.com/v1/files/tu0s129gwxdk1-UA/image;s=800x800" alt="Щітка для шерсті" />
+              <h3>Щітка для шерсті</h3>
+              <p>Ціна: 109 грн</p>
+              <button class="add-to-cart" data-name="Щітка для шерсті" data-price="109" data-img="https://ireland.apollo.olxcdn.com/v1/files/tu0s129gwxdk1-UA/image;s=800x800">До кошика</button>
+            </div>
+            
+            
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 PetStore. Усі права захищені.</p>
+        </div>
+    </footer>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        const cart = JSON.parse(localStorage.getItem("cart")) || [];
+    
+        document.querySelectorAll(".add-to-cart").forEach(function (button) {
+          button.addEventListener("click", function () {
+            const name = this.getAttribute("data-name");
+            const price = parseFloat(this.getAttribute("data-price"));
+            const img = this.getAttribute("data-img");
+    
+            if (!name || isNaN(price) || !img) {
+              alert("Помилка додавання товару. Дані некоректні.");
+              return;
+            }
+    
+            const existingItem = cart.find((item) => item.name === name);
+            if (existingItem) {
+              existingItem.quantity += 1;
+            } else {
+              cart.push({ name, price, img, quantity: 1 });
+            }
+    
+            localStorage.setItem("cart", JSON.stringify(cart));
+            alert(`${name} додано до кошика!`);
+          });
+        });
+      });
+      const loggedUser = JSON.parse(localStorage.getItem('loggedInUser'));
+  const profileLink = document.getElementById('profileLink');
+  const loginLink = document.getElementById('loginLink');
+  const registerLink = document.getElementById('registerLink');
+
+  if (loggedUser) {
+    if (profileLink) profileLink.style.display = 'inline';
+    if (loginLink) loginLink.style.display = 'none';
+    if (registerLink) registerLink.style.display = 'none';
+  }
+</script> 
+</body>
+</html>

@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8">
+  <title>PetStore – Реєстрація</title>
+  <link rel="stylesheet" href="static/styles/style.css">
+</head>
+<body>
+  <header>
+    <h1>PetStore</h1>
+  </header>
+
+  <nav>
+    <ul>
+      <li><a href="index.html">Головна</a></li>
+      <li><a href="dogs.html">Собаки</a></li>
+      <li><a href="cats.html">Коти</a></li>
+      <li><a href="birds.html">Птахи</a></li>
+      <li><a href="cart.html">Кошик</a></li>
+      <li><a href="profile.html" id="profileLink" style="display:none;">Особистий кабінет</a></li>
+      <li><a href="login.html" id="loginLink">Вхід</a></li>
+      <li><a href="register.html" id="registerLink">Реєстрація</a></li>
+    </ul>
+  </nav>
+
+  <main>
+    <h2>Реєстрація</h2>
+    <form class="auth-form" onsubmit="registerUser(event)">
+      <label for="name">Ім’я:</label>
+      <input type="text" id="name" required>
+
+      <label for="email">Електронна пошта:</label>
+      <input type="email" id="email" required>
+
+      <label for="password">Пароль:</label>
+      <input type="password" id="password" required>
+
+      <button type="submit">Зареєструватися</button>
+    </form>
+  </main>
+
+  <footer>
+    <div class="container">
+      <p>&copy; 2025 PetStore. Усі права захищені.</p>
+    </div>
+  </footer>
+
+  <script>
+    function registerUser(event) {
+      event.preventDefault();
+      const name = document.getElementById('name').value;
+      const email = document.getElementById('email').value;
+      const password = document.getElementById('password').value;
+
+      const users = JSON.parse(localStorage.getItem('users') || '[]');
+
+      // Перевірка на існуючого користувача
+      if (users.some(u => u.email === email)) {
+        alert('Користувач з такою поштою вже існує!');
+        return;
+      }
+
+      users.push({ name, email, password });
+      localStorage.setItem('users', JSON.stringify(users));
+
+      // Запис поточного користувача
+      localStorage.setItem('currentUser', JSON.stringify({ name, email }));
+
+      alert('Реєстрація успішна!');
+      window.location.href = 'profile.html';
+    }
+</script>
+</body>
+</html>
